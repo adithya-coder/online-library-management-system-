@@ -1,6 +1,6 @@
 <html>
 	Hello peeps
 	Hello
-	new hello
+	<p>new hello</p>
 </html>
 
