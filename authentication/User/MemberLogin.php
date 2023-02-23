@@ -1,5 +1,5 @@
 <?php
-	// include_once '../Header.php';
+	session_start();
 ?>
 
 <html>
@@ -12,22 +12,22 @@
 <body>
 	<div class="login">
 	  <h1>Member Login</h1>
-		<form method="post" action="includes/check_login.php">
+		<form method="POST" action="includes/check_login.php">
 		  <input type="text" placeholder="Email" id="email" name="email" required="required" />
 			<input type="password" placeholder="Password" id="password"  name="password" required="required" />
 			<button type="submit" class="btn btn-primary btn-block btn-large" id="btn_login">Login</button>
 			<br>
-			<a href="PubSignup.php" id="signup"> Signup</a>
+			<a href="MemSignup.php" id="signup">Signup</a>
 			
 			<br><br><br>
 			
 			<div class="sm_buttons">
 				<div class="fb  button btn-large">
-					<a><i class="fa fa-facebook fa-fw"></i> Login with Facebook
+					<a><i class="fa fa-facebook fa-fw"></i> Login with Facebook</a>
 				</div>
 				
 				<div class="google button btn-large">
-					<i class="fa fa-google fa-fw"></i> Login with Google
+					<a><i class="fa fa-google fa-fw"></i> Login with Google</a>
 					
 					<!-- Align FB & Google button contents -->
 					&nbsp &nbsp

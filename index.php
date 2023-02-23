@@ -1,157 +1,66 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+    
+    include("components/Header.php");
+    $ftab="";
+
+    require_once("config.php"); // include database connection
+
+    /* get books one-by-one */
+    
+    $fsql = "SELECT ISBN, Book_Name, Cover_pic FROM book ORDER BY ISBN DESC ";
+    $fpp = mysqli_query($conn, $fsql);
+
+    while($rows = $fpp->fetch_assoc()) {
+            
+        $image = $rows['Cover_pic'];
+
+        $ftab .="<div class='card' style='margin:3%; padding: 3%; background: rgba(255,255,255,0.1);
+                box-shadow:0 25px 45px rgba(0,0,0,0.1);
+                border: 1px solid rgba(255,255,255,0.5);
+                border-right: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                backdrop-filter: blur(25px);'>";
+
+            $ftab .= "<center><img class='apps' src='Src/it20029586/image/$image'></center> <br>";
+
+            $ftab .= "<center><h2> ". $rows['Book_Name']."</h2></center> <br>";
+
+            $ftab .="<center><a href='Src/it20072810/details.php?ISBN=$rows[ISBN]'><button  class='btn btn-remove btns details-btn'> &#128308; Details</button></a></center>";
+
+        $ftab .= "</div>";
+    }
+
+ ?>
 <html>
-<head>
-	<title>Loading</title>
-</head>
-<style type="text/css">
-	*
-	{
-		margin: 0;
-		padding: 0;
-		transition: 0.5s;
-		background: #262626;
-	}
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+        <meta charset="utf-8">
 
-	.ring
-	{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 150px;
-		height: 150px;
-		background: transparent;
-		border: 3px solid #3c3c3c;
-		border-radius: 50%;
-		text-align: center;
-		line-height: 150px;
-		font-family: sans-serif;
-		font-size: 20px;
-		color: #fff000;
-		letter-spacing: 4px;
-		text-transform: uppercase;
-		text-shadow: 0 0 10px #fff000;
-		box-shadow: 0 0 20px rgba(0,0,0,0.5);
-	}
-	.ring:before
-	{
-		content: '';
-		position: absolute;
-		top: -3px;
-		left: -3px;
-		width: 100%;
-		height: 100%;
-		border: 3px solid transparent;
-		border-top: 3px solid #fff000;
-		border-right: 3px solid #fff000;
-		border-radius: 50%;
-		animation: animatecircle 2s linear infinite;
-	}
-	span
-	{
-		display: block;
-		position: absolute;
-		top: calc(50% - 2px);
-		left: 50%;
-		width: 50%;
-		height: 4px;
-		background: transparent;
-		transform-origin: left;
-		animation: animate 2s linear infinite;
-	}
-	span:before
-	{
-		content: '';
-		position: absolute;
-		width: 16px;
-		height: 16px;
-		border-radius: 50%;
-		background: #fff000;
-		top: -6px;
-		right: -8px;
-		box-shadow: 0 0 20px #fff000;
-	}
-	@keyframes animatecircle
-	{
-		0%
-		{
-			transform: rotate(0deg);
-		}
-		100%
-		{
-			transform: rotate(360deg);
-		}
-	}
-	@keyframes animate 
-	{
-		0%
-		{
-			transform: rotate(45deg);
-		}
-		100%
-		{
-			transform: rotate(405deg);
-		}
+        <!-- dashboard css file -->
+        <link rel="stylesheet" type="text/css" href="CSS/nav.css">
+        <link rel="stylesheet" type="text/css" href="CSS/cate.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/dashboard.css">
 
-	}
-	@keyframes Text 
-	{
-		0%
-		{
-			Bibliyoteca
-		}
-		100%
-		{
-			
-		}
-</style>
-<div><input type="hidden" id="text-to-speech" placeholder="Enter text to speak..." value="Welcome to the Biblioteca Public Library" /></div>
-<body onload="textToAudio()">
-	<div class="ring">
-		<em style="font-size:10px;">Loading</em>
+        <title>Dashboard</title>
+    </head>
 
-		<script type="text/javascript">
-			/*var i=0;
-			for ( i = 0; i<100;  i++) {
-				if(i==100){
-					 window.location.href = 'index.php';
-				}
-			}*/
+    <body background-color="black">
+        
+        <div id="main">
+            <div style='display: grid; grid-template-columns: repeat(3, 3fr); width: 100%;'>
+                <?php echo $ftab; ?>
+            </div>
+        </div>
 
-setTimeout(function(){
-            window.location.href = 'index1.php';
-         }, 10000);
-		 
-		</script>
-		<span></span>
-	</div>
- <img width="100%" height="10%" src="bg logo.png "  > 
-</body>
+        <!-- Footer component -->
+        <?php include("components/Footer.php"); ?>
 
-<script type="text/javascript">
-	$(window).load(function() {
-		// Animate loader off screen
-		$("ring").fadeOut("slow");;
-		document.getElementById("ring").onload = function() {src="index1.php"};
-	});
+        <!-- JS files -->
+        <script type="text/javascript" src="Src/it21068546/js/nac.js"></script> 
+        <script src="AppJS/ctg.js"></script>
 
-	 function textToAudio() {
-                let msg = document.getElementById("text-to-speech").value;
-                
-                let speech = new SpeechSynthesisUtterance();
-                speech.lang = "en-US";
-                
-                speech.text = msg;
-                speech.volume = 1;
-                speech.rate = 1;
-                speech.pitch = 2;
-                
-                window.speechSynthesis.speak(speech);
-            }
-
-            function myFunction() {
-  alert('textToAudio()');
-}
-	
-</script>
+    </body>
 </html>
