@@ -22,10 +22,10 @@ background: rgba(255, 255, 255, 1.0);
 
 /* The navigation menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 25px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #231f3e;
   display: block;
   transition: 0.3s;
 }
@@ -100,10 +100,13 @@ background: rgba(255, 255, 255, 1.0);
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
+  top: 8px;
+  right: 15px;
   font-size: 36px;
-  margin-left: 50px;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -169,19 +172,38 @@ background: rgba(255, 255, 255, 1.0);
     padding: 13px 17px 0 27px;
 }
 
-  .topnav img{
-    width:25%;
-    padding-left: 10px;
-    background-color: transparent;
+.topnav img{
+  width:25%;
+  padding-left: 10px;
+  background-color: transparent;
 
-  }
+}
 
-   .topnav1 .active img{
-    background-color: lightskyblue;
-    width: 30%;
-    padding-left: 0rem;
+  .topnav1 .active img{
+  background-color: lightskyblue;
+  width: 30%;
+  padding-left: 0rem;
 
-  }
 }
 
 
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: gold;
+}

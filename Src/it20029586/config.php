@@ -1,18 +1,19 @@
 
 <?php
-	/*$host="localhost";
+	$host="localhost";
 	$userName="root";
 	$password="";
-	$db="online_libaray";
+	$db="online_library";
 	
 	$conn=mysqli_connect($host,$userName,$password,$db);
 	if($conn)
 	{
-		/*echo "Connection Successfull";
-	}else
+		echo "Connection Successfull";
+	}
+	else
 	{
 		echo"Connection unsuccessful";
-	}*/
+	}
 
-	include_once("../it21068546/config.php");
+	// include_once("../it21068546/config.php");
 ?>

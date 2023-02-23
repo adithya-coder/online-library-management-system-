@@ -94,7 +94,7 @@ input[type=text].srch {
 .Top .btn{
 	position:absolute;
 	top:48%;
-	margin-left;30px;
+	margin-left:30px;
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	background-color: LightGray;
@@ -197,7 +197,7 @@ hr.hori{
 .cls{
 	color:DarkBlue;
 	float:right;
-	font-size;15px;
+	font-size: 15px;
 }
 .cls:hover,
 .close:focus {
@@ -221,9 +221,7 @@ hr.hori{
 }
 /*Rating the service*/
 .rate {
-	
     float:left;
-	margin-left:680px;
 	
     height: 46px;
     padding: 0 10px;
@@ -255,15 +253,15 @@ hr.hori{
 /* .rate:not(:checked) > label:hover, */
 /* .rate:not(:checked) > label:hover ~ label { */
     /* color:black;   */
-}
+/* } */
 /* Color that appears placing the cursor over stars after rating the service */
 /* .rate > input:checked + label:hover, */
 /* .rate > input:checked + label:hover ~ label, */
 /* .rate > input:checked ~ label:hover, */
 /* .rate > input:checked ~ label:hover ~ label, */
 /* .rate > label:hover ~ input:checked ~ label { */
-    color: #c59b08;
-}
+    /* color: #c59b08;
+} */
 .Top .bb{
 	position:absolute;
 	top:46%;
@@ -303,20 +301,17 @@ hr.hori{
 }
 /*Pictures of apps*/
 .apps{
-	border-radius:50px;
-	width:200px;
-	height:400px;
-	padding:20px;
-	margin-left:25px;
-	opacity:1;
-	transition:.5s ease;
-	backface-visibility:hidden;
-	transition:transform .2s;
+	border-radius: 1.6rem;
+	width: 200px;
+	height: 400px;
+	margin-top: 45px;
+	opacity: 1;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	transition: transform .2s;
 }
 /*to zoom apps when Placing the mouse over apps*/
 .apps:hover{
-	-ms-transform:scale(1.5);
-	-webkit-transform:scale(1.5);
 	transform:scale(1.2);
 }
 /*to add a text underneath the app picture*/
