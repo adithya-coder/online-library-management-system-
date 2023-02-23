@@ -1,5 +1,5 @@
 <?php   //get login details
-
+    session_start();
     if(isset($_SESSION['logged_user'])) {
         $username= $_SESSION['logged_user'] ;
     }
@@ -45,4 +45,4 @@
 <!--End nav bar  menu countrol and navigation-->
 </div>
 
-    <?php include('components/SecondaryNavBar.php');?>
+<?php include('components/SecondaryNavBar.php'); ?>

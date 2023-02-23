@@ -12,12 +12,12 @@
     <div style="margin-left: 0rem; word-spacing: 1px; font-size: 1rem; font-family: 'Varela Round'; font-weight: bold;">
 
         <!--menu-->
-        <a href="index.php">🎨 Refesh</a>
+        <a href="index.php">🏠 Home</a>
         <a onclick="textAudio()" href="authentication/User/MemberLogin.php">🕮 Login Users </a>
         <a onclick="textToAudio()" href="authentication/Publisher/PublisherLogin.php">🕮 Login Publishers </a>
-        <a href="Src/it21007910/newaboutus.php">🛈  About Us</a>
-        <a href="Src/it20029586/Contact _us.php">👤 Contact</a>
-        <a href="Src/it20029586/privacy policy.php">✅ Privacy</a>
+        <a href="newaboutus.php">🛈  About Us</a>
+        <a href="contactus.php">👤 Contact Us</a>
+        <a href="privacypolicy.php">✅ Privacy Policy</a>
         <?php
             if(isset($_SESSION['logged_user'])) {
                 echo '<a href="functionalities/logout.php">Logout</a>';
@@ -35,50 +35,6 @@
          
     </div>
 </div>
+
+<script type="text/javascript" src="JS/n.js"></script> 
 <!--End Side nav bar-->
-
-
-    <script type="text/javascript">
-        /* FOR DEBUGGING PURPOSES */ 
-        // openNav();
-
-
-        
- 
-        function textToAudio() {
-            let msg = document.getElementById("text-to-speech").value;
-            
-            let speech = new SpeechSynthesisUtterance();
-            speech.lang = "en-US";
-            
-            speech.text = msg;
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-            
-            window.speechSynthesis.speak(speech);
-        }
-
-        function myFunction() {
-            alert('textToAudio()');
-        }
-
-        function textAudio() {
-            let msg = document.getElementById("text-to-user").value;
-            
-            let speech = new SpeechSynthesisUtterance();
-            speech.lang = "en-US";
-            
-            speech.text = msg;
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-            
-            window.speechSynthesis.speak(speech);
-        }
-
-        function myFunction() {
-            alert('textAudio()');
-        }
-
-    </script>

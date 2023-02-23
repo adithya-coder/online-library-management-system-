@@ -1,6 +1,6 @@
 <?php 
-//Header
-include("./Header.php");
+  //Header
+  include("components/Header.php");
  ?>
  
 <!--include database file-->
@@ -36,7 +36,7 @@ $conn->close();
 
 <!--linking css-->
 <link rel="stylesheet" type="text/css" href="">
-<link rel="stylesheet" type="text/css" href="css/contact.css">
+<link rel="stylesheet" type="text/css" href="CSS/contactus.css">
 
 <html>
 
@@ -161,7 +161,7 @@ background-image: radial-gradient(50% 50% at top center,rgba(0,0,0,.70),#262626)
 
  <?php 
 //include footer
- require("./Footer.php");
+ include("components/Footer.php");
   ?>
 
 

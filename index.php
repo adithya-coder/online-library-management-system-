@@ -1,6 +1,4 @@
 <?php 
-    session_start();
-    
     include("components/Header.php");
     $ftab="";
 
@@ -59,8 +57,7 @@
         <?php include("components/Footer.php"); ?>
 
         <!-- JS files -->
-        <script type="text/javascript" src="Src/it21068546/js/nac.js"></script> 
-        <script src="AppJS/ctg.js"></script>
+        <script type="text/javascript" src="JS/speech.js"></script>
 
     </body>
 </html>
